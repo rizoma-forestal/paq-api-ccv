@@ -28,6 +28,11 @@ public class ComponenteLocal implements Serializable{
      */
     private String correoElectronico;
     
+    /**
+     * Identificación de la Provincia en el SErvicio de Gestión territorial
+     */
+    private Long idProvGt;    
+    
     /*****************
      * Contructores **
      *****************/
@@ -37,18 +42,28 @@ public class ComponenteLocal implements Serializable{
         this.provincia = "dafault";
         this.url = "default";
         this.correoElectronico = "default";
+        this.idProvGt = Long.valueOf(0);
     }
     
-    public ComponenteLocal(Long id, String provincia, String url, String correoElectronico){
+    public ComponenteLocal(Long id, String provincia, String url, String correoElectronico, Long idProvGt){
         this.id = id;
         this.provincia = provincia;
         this.url = url;
         this.correoElectronico = correoElectronico;
+        this.idProvGt = idProvGt;
     }    
-
+   
     /**********************
      * Métodos de acceso **
      **********************/   
+    public Long getIdProvGt() {
+        return idProvGt;
+    }
+
+    public void setIdProvGt(Long idProvGt) {
+        this.idProvGt = idProvGt;
+    }
+
     public Long getId() {
         return id;
     }
