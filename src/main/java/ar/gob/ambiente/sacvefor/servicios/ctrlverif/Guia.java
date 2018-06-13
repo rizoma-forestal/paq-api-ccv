@@ -128,14 +128,7 @@ public class Guia implements Serializable{
     /**
      * Nombre de la Provincia que emitió la Guía, en caso de ser local
      */
-    private String provincia;
-    
-    /**
-     * Variable privada: guarda la cadena codificada con md5 
-     * a partir del código de la guía y la fecha de emisión 
-     * para generar el código QR de la guía en papel.
-     */   
-    private String codQr;        
+    private String provincia;  
     
     /******************
      * Constructores **
@@ -163,12 +156,11 @@ public class Guia implements Serializable{
         this.fechaVencimiento = new Date();
         this.fechaCierre = new Date();
         this.provincia = "default";
-        this.codQr = "default";
     }
 
     public Guia(Long id, String codigo, Parametrica estado, String tipo, String tipoFuente, String numFuente, List<Item> lstItems, ComponenteLocal compLocal, String nombreOrigen,
             Long cuitOrigen, String locOrigen, String nombreDestino, Long cuitDestino, String locDestino, String matVehiculo, String matAcoplado, String nombreConductor, Long dniConductor,
-            Date fechaEmision, Date fechaVencimiento, Date fechaCierre, String provincia, String codQr){
+            Date fechaEmision, Date fechaVencimiento, Date fechaCierre, String provincia){
         this.id = id;
         this.codigo = codigo;
         this.estado = estado;
@@ -191,20 +183,11 @@ public class Guia implements Serializable{
         this.fechaVencimiento = fechaVencimiento;
         this.fechaCierre = fechaCierre;
         this.provincia = provincia;
-        this.codQr = codQr;
     }    
      
     /**********************
      * Métodos de acceso **
      **********************/ 
-    public String getCodQr() {
-        return codQr;
-    }
-    
-    public void setCodQr(String codQr) {
-        this.codQr = codQr;
-    }
-
     public String getLocOrigen() {
         return locOrigen;
     }
